@@ -1,0 +1,64 @@
+# File: /vintage-photo-blog/.htaccess
+# Date: 2023-11-09
+# Name: Programmed by Jaime C Smith
+# 
+# This file contains Apache server configurations.
+# It improves security, performance, and SEO.
+
+# Enable URL rewriting
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /vintage-photo-blog/
+    
+    # Redirect to non-www version
+    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+    RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+    
+    # Redirect index.php to root
+    RewriteRule ^index\.php$ / [R=301,L]
+    
+    # Handle 404 errors
+    ErrorDocument 404 /vintage-photo-blog/404.php
+</IfModule>
+
+# Protect against XSS attacks
+<IfModule mod_headers.c>
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Protect sensitive files
+<FilesMatch "^(\.htaccess|\.htpasswd|config\.php|.*\.sql)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Disable directory browsing
+Options -Indexes
+
+# Protect uploads directory from script execution
+<Directory "/vintage-photo-blog/uploads">
+    <FilesMatch "\.(?i:php|phtml|php3|php4|php5|php7|phps|pht|phar|htaccess|htpasswd)$">
+        Order Allow,Deny
+        Deny from all
+    </FilesMatch>
+</Directory>
+
+# Enable compression for better performance
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json
+</IfModule>
+
+# Set browser caching
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/html "access plus 1 day"
+</IfModule>

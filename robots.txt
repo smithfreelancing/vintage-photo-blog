@@ -1,0 +1,19 @@
+# File: /vintage-photo-blog/robots.txt
+# Date: 2023-11-09
+# Name: Programmed by Jaime C Smith
+# 
+# This file provides instructions to web crawlers and search engines.
+# It helps with SEO and prevents crawling of private areas.
+
+User-agent: *
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /test_*.php
+Disallow: /ajax_*.php
+Disallow: /create_*.php
+Disallow: /login.php
+Disallow: /register.php
+Disallow: /profile.php
+Disallow: /logout.php
+
+Sitemap: http://iamblogging.com/vintage-photo-blog/sitemap.xml
