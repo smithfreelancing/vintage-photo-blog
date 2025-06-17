@@ -1,138 +1,385 @@
-/*
-* File: /vintage-photo-blog/assets/css/style.css
-* Date: 2023-11-09
-* Name: Programmed by Jaime C Smith
-* 
-* This file contains custom styles for the vintage photography blog.
-* It defines the monochrome, minimalist aesthetic of the site.
-*/
-
-/* Base Styles */
-body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 300;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f8f9fa;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
-    letter-spacing: 0.5px;
-}
-
-a {
-    color: #333;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #000;
-    text-decoration: none;
-}
-
-/* Layout */
-.site-content {
-    min-height: calc(100vh - 160px);
-}
-
-/* Header */
-.site-header {
-    margin-bottom: 2rem;
-}
-
-.navbar-brand {
-    font-weight: 400;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-/* Cards */
-.card {
-    border: none;
-    border-radius: 0;
-}
-
-.card-body {
-    padding: 2rem;
-}
-
-/* Forms */
-.form-control {
-    border-radius: 0;
-    border: 1px solid #ddd;
-    padding: 0.75rem 1rem;
-}
-
-.form-control:focus {
-    border-color: #aaa;
-    box-shadow: none;
-}
-
-.btn {
-    border-radius: 0;
-    padding: 0.5rem 1.5rem;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-}
-
-.btn-dark {
-    background-color: #333;
-    border-color: #333;
-}
-
-.btn-dark:hover {
-    background-color: #000;
-    border-color: #000;
-}
-
-/* Alerts */
-.alert {
-    border-radius: 0;
-    padding: 1rem;
-}
-
-/* Footer */
-.site-footer {
-    padding: 2rem 0;
-}
-
-.site-footer a {
-    color: #666;
-}
-
-.site-footer a:hover {
-    color: #333;
-}
-
-/* Custom Styles for Auth Pages */
-.auth-page {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-}
-
-/* Profile Page */
-.profile-image-container {
-    margin-bottom: 1.5rem;
-}
-
-.default-profile-image {
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
-}
-
-/* Custom File Input */
-.custom-file-label {
-    border-radius: 0;
-    height: calc(1.5em + 1rem + 2px);
-    padding: 0.5rem 1rem;
-}
-
-.custom-file-label::after {
-    height: calc(1.5em + 1rem);
-    padding: 0.5rem 1rem;
-    border-radius: 0;
-    background-color: #f8f9fa;
-}
+/*
+* File: /vintage-photo-blog/assets/css/style.css
+* Date: 2023-11-09
+* Name: Programmed by Jaime C Smith
+* 
+* This file contains custom styles for the vintage photography blog.
+* It defines the monochrome, minimalist aesthetic inspired by Le Labo.
+*/
+
+/* Base Styles */
+body {
+    font-family: 'EB Garamond', 'Times New Roman', serif;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #333;
+    background-color: #fff;
+    letter-spacing: 0.02em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+a {
+    color: #333;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+a:hover {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+}
+
+/* Layout */
+.site-content {
+    min-height: calc(100vh - 160px);
+    padding: 2rem 0;
+}
+
+.container {
+    max-width: 1140px;
+}
+
+/* Header */
+.site-header {
+    margin-bottom: 0;
+}
+
+.navbar {
+    padding: 1.5rem 0;
+}
+
+.navbar-brand {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem !important;
+    border-bottom: none;
+}
+
+.nav-link:hover {
+    border-bottom: none;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #f8f8f8;
+    padding: 6rem 0;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+/* Featured Posts */
+.featured-posts {
+    margin-bottom: 4rem;
+}
+
+.post-card {
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+}
+
+.post-card .card {
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.post-card .card-img-top {
+    border-radius: 0;
+    height: 240px;
+    object-fit: cover;
+}
+
+.post-card .card-body {
+    padding: 1.5rem;
+}
+
+.post-card .card-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.post-card .card-text {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.post-meta {
+    font-size: 0.8rem;
+    color: #999;
+    margin-bottom: 0.5rem;
+}
+
+/* Single Post */
+.post-header {
+    margin-bottom: 2rem;
+}
+
+.post-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.post-featured-image {
+    margin-bottom: 2rem;
+}
+
+.post-featured-image img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.post-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+}
+
+/* Comments */
+.comments-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+.comment {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.comment-meta {
+    font-size: 0.85rem;
+    color: #999;
+    margin-bottom: 0.5rem;
+}
+
+.comment-content {
+    font-size: 0.95rem;
+}
+
+.comment-form {
+    margin-top: 2rem;
+}
+
+/* Forms */
+.form-control {
+    border-radius: 0;
+    border: 1px solid #ddd;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+}
+
+.form-control:focus {
+    border-color: #aaa;
+    box-shadow: none;
+}
+
+.btn {
+    border-radius: 0;
+    padding: 0.75rem 1.5rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+.btn-dark {
+    background-color: #333;
+    border-color: #333;
+}
+
+.btn-dark:hover {
+    background-color: #000;
+    border-color: #000;
+}
+
+.btn-outline-dark {
+    color: #333;
+    border-color: #333;
+}
+
+.btn-outline-dark:hover {
+    background-color: #333;
+    border-color: #333;
+}
+
+/* Alerts */
+.alert {
+    border-radius: 0;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Pagination */
+.pagination {
+    margin-top: 3rem;
+    justify-content: center;
+}
+
+.page-link {
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    border-radius: 0;
+}
+
+.page-link:hover {
+    background-color: #f5f5f5;
+    color: #000;
+    border-color: #ddd;
+}
+
+.page-item.active .page-link {
+    background-color: #333;
+    border-color: #333;
+}
+
+/* Footer */
+.site-footer {
+    padding: 3rem 0;
+    font-size: 0.9rem;
+}
+
+.site-footer h5 {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.site-footer a {
+    color: #666;
+    border-bottom: none;
+}
+
+.site-footer a:hover {
+    color: #333;
+    border-bottom: 1px solid #333;
+}
+
+.footer-links {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 767.98px) {
+    .hero {
+        padding: 4rem 0;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .post-title {
+        font-size: 2rem;
+    }
+}
+
+/* Custom Styles for Auth Pages */
+.auth-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem 0;
+}
+
+/* Profile Page */
+.profile-image-container {
+    margin-bottom: 1.5rem;
+}
+
+.default-profile-image {
+    background-color: #f8f8f8;
+    border: 1px solid #eee;
+}
+
+/* Custom File Input */
+.custom-file-label {
+    border-radius: 0;
+    height: calc(1.5em + 1rem + 2px);
+    padding: 0.5rem 1rem;
+}
+
+.custom-file-label::after {
+    height: calc(1.5em + 1rem);
+    padding: 0.5rem 1rem;
+    border-radius: 0;
+    background-color: #f8f8f8;
+}
+
+/* Category Pills */
+.category-pill {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: #f5f5f5;
+    color: #333;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+}
+
+.category-pill:hover {
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: none;
+}
+
