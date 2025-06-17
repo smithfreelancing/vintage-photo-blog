@@ -12,6 +12,9 @@ require_once 'includes/config.php';
 require_once 'includes/db.php';
 require_once 'includes/functions.php';
 
+// Check for maintenance mode
+require_once 'maintenance.php';
+
 $pageTitle = "Home";
 
 // Get featured posts
