@@ -22,6 +22,7 @@ if (!defined('SITE_NAME')) {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="<?php echo SITE_URL; ?>/assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Helvetica+Neue:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="site-header">
@@ -42,7 +43,25 @@ if (!defined('SITE_NAME')) {
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo SITE_URL; ?>/about.php">About</a>
                         </li>
+                        <?php if (isLoggedIn()): ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?php echo SITE_URL; ?>/my_posts.php">My Posts</a>
+                            </li>
+                        <?php endif; ?>
                     </ul>
+                    
+                    <!-- Search Form -->
+                    <form class="form-inline my-2 my-lg-0 mr-3" action="<?php echo SITE_URL; ?>/search.php" method="get">
+                        <div class="input-group">
+                            <input class="form-control form-control-sm" type="search" name="q" placeholder="Search..." aria-label="Search">
+                            <div class="input-group-append">
+                                <button class="btn btn-sm btn-outline-dark" type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    
                     <ul class="navbar-nav">
                         <?php if (isLoggedIn()): ?>
                             <li class="nav-item dropdown">
@@ -54,7 +73,10 @@ if (!defined('SITE_NAME')) {
                                         <a class="dropdown-item" href="<?php echo ADMIN_URL; ?>">Admin Dashboard</a>
                                         <div class="dropdown-divider"></div>
                                     <?php endif; ?>
+                                    <a class="dropdown-item" href="<?php echo SITE_URL; ?>/create_post.php">Create Post</a>
+                                    <a class="dropdown-item" href="<?php echo SITE_URL; ?>/my_posts.php">My Posts</a>
                                     <a class="dropdown-item" href="<?php echo SITE_URL; ?>/profile.php">Profile</a>
+                                    <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="<?php echo SITE_URL; ?>/logout.php">Logout</a>
                                 </div>
                             </li>
@@ -72,3 +94,4 @@ if (!defined('SITE_NAME')) {
         </nav>
     </header>
     <main class="site-content">
+
