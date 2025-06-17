@@ -101,6 +101,8 @@ function truncateText($text, $length = 100) {
     return $text . '...';
 }
 
+
+
 /**
  * Upload an image file
  * @param array $file - The file from $_FILES
@@ -126,7 +128,13 @@ function uploadImage($file, $destination = 'photos/') {
     
     // Create unique filename
     $fileName = uniqid() . '_' . basename($file['name']);
-    $uploadPath = UPLOAD_PATH . $destination . $fileName;
+    $uploadDir = UPLOAD_PATH . $destination;
+    $uploadPath = $uploadDir . $fileName;
+    
+    // Create directory if it doesn't exist
+    if (!is_dir($uploadDir)) {
+        mkdir($uploadDir, 0755, true);
+    }
     
     // Move the uploaded file
     if (move_uploaded_file($file['tmp_name'], $uploadPath)) {
@@ -135,6 +143,10 @@ function uploadImage($file, $destination = 'photos/') {
     
     return false;
 }
+
+
+
+
 
 /**
  * Get current page URL

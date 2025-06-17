@@ -15,9 +15,9 @@ define('ADMIN_URL', SITE_URL . '/admin');
 
 // Database configuration
 define('DB_HOST', 'localhost');
-define('DB_USER', 'smithfre_admin');         // Your database username
-define('DB_PASS', 'NewSecurePassword123!');  // Your database password
-define('DB_NAME', 'smithfre_vintage_photo_blog'); // CORRECTED database name
+define('DB_USER', 'smithfre_admin');
+define('DB_PASS', 'NewSecurePassword123!');
+define('DB_NAME', 'smithfre_vintage_photo_blog');
 
 // Error reporting
 error_reporting(E_ALL);
@@ -36,5 +36,5 @@ define('UPLOAD_URL', SITE_URL . '/uploads/');
 // Define allowed file types for uploads
 define('ALLOWED_IMAGE_TYPES', ['image/jpeg', 'image/png', 'image/gif']);
 define('MAX_FILE_SIZE', 5 * 1024 * 1024); // 5MB
-?>
+// No closing PHP tag
 
